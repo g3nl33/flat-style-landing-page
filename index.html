@@ -7,31 +7,44 @@
   <link rel="stylesheet" href="./src/style.css">
   <link href="https://fonts.googleapis.com/css?family=Cherry+Swash|Roboto:100,300,400&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="./js/script.js"></script>
 </head>
 
 <body>
-  <header>
-    <h1 class="site-logo">Black Sea</h1>
-    <nav class="header-nav">
-      <a href="#">HOME</a>
-      <span>/</span>
-      <a href="#">ABOUT ME</a>
-      <span>/</span>
-      <a href="#">PORTFOLIO</a>
-      <span>/</span>
-      <a href="#">CONTACT ME</a>
+  <header class="page-header">
+    <h1 class="page-header__logo">Black Sea</h1>
+    <nav class="page-header__nav">
+      <ul class="page-header__nav-content">
+        <li><a href="#">HOME</a></li>
+        <li><span>/</span></li>
+        <li><a href="#">ABOUT ME</a></li>
+        <li><span>/</span></li>
+        <li><a href="#">PORTFOLIO</a></li>
+        <li><span>/</span></li>
+        <li><a href="#">CONTACT ME</a></li>
+      </ul>
     </nav>
   </header>
 
   <section class="recent-topics-slider">
-    <h2>WE NEED THE TONIC OF WILDNESS</h2>
-    <button class="read-more-btn">Read more</button>
+    <div class="showSlide fade">
+        <img src="./images/image1.jpg" />
+    </div>
+    <div class="showSlide fade">
+        <img src="./images/image2.jpg" />
+    </div>
+    <div class="showSlide fade">
+        <img src="./images/image3.jpg" />
+    </div>
+    <!-- Navigation arrows -->
+    <a class="left" onclick="nextSlide(-1)">❮</a>
+    <a class="right" onclick="nextSlide(1)">❯</a>
   </section>
 
   <section class="site-description">
-    <h2 class="site-description-header">At the same time that we are earnest to explore <span>&</span> learn all things</h2>
-    <p class="site-description-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-    <div class="logos-container">
+    <h2 class="site-description__header">At the same time that we are earnest to explore <span>&</span> learn all things</h2>
+    <p class="site-description__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    <div class="site-description__icons-container">
       <i class="material-icons">shopping_basket</i>
       <i class="material-icons">public</i>
       <i class="material-icons">business_center</i>
@@ -39,34 +52,66 @@
   </section>
 
   <article class="cite-of-the-day">
-    <div class="cite-heading">
-      <img class="author-photo" src="./image/dhavan-photo.png" alt="Author photo">
-      <div class="author-info">
-        <div class="author-description">
-          <span class="author-name">DHAVAN</span>
-          <span class="quote-icon"><i class="material-icons">format_quote</i></span>
+    <div class="cite-of-the-day__header">
+      <img class="cite-of-the-day__author-photo" src="./images/dhavan-photo.png" alt="Author photo">
+      <div class="cite-of-the-day__author-info">
+        <div class="cite-of-the-day__author-info-content">
+          <span class="cite-of-the-day__author-name">DHAVAN</span>
+          <span class="cite-of-the-day__quote-icon"><i class="material-icons">format_quote</i></span>
         </div>
       </div>
     </div>
-    <p class="cite-text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting</p>
+    <p class="cite-of-the-day__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting</p>
   </article>
 
-  <div class="contact-us">
-    <div class="form-round-wrapper">
-      <form>
-        <input class="form-input-fields" type="text" placeholder="Name">
-        <input class="form-input-fields" type="email" placeholder="email address">
-        <textarea class="form-message-field" name="message" placeholder="Message"></textarea>
-        <div class="form-submit-btn-wrapper">
-          <button class="form-submit-btn" type="submit"><i class="material-icons">check_circle</i></button>
+  <section class="contact-us">
+    <div id="contact-us__map-bg"></div>
+    <div class="contact-us__form-wrapper">
+      <form class="form">
+        <input class="form__input-field" type="text" placeholder="Name">
+        <input class="form__input-field" type="email" placeholder="email address">
+        <textarea class="form__message-field" name="message" placeholder="Message"></textarea>
+        <div class="form__submit-btn-wrapper">
+          <button class="form__submit-btn" type="submit"><i class="material-icons">check_circle</i></button>
         </div>
       </form>
     </div>
-  </div>
+  </section>
 
-  <footer>
-    <span class="footer-cr">COPYRIGHT &copy; 2012 CSS AUTHOR.COM</span>
+  <footer class="page-footer">
+    <span class="page-footer__cr">COPYRIGHT &copy; 2012 CSS AUTHOR.COM</span>
   </footer>
+
+  <script type="text/javascript">
+    var slide_index = 1;
+    displaySlides(slide_index);
+    function nextSlide(n) {
+        displaySlides(slide_index += n);
+    }
+    function currentSlide(n) {
+        displaySlides(slide_index = n);
+    }
+    function displaySlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("showSlide");
+        if (n > slides.length) { slide_index = 1 }
+        if (n < 1) { slide_index = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slides[slide_index - 1].style.display = "block";
+    }
+  </script>
+
+  <script>
+    function initMap() {
+      var lviv = {lat: 49.840, lng: 24.029};
+      var map = new google.maps.Map(
+        document.getElementById('contact-us__map-bg'), {zoom: 14, center: lviv});
+    }
+  </script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAauxXF6x5dBCRvtlckiVs357kpSBEXM_4&callback=initMap"></script>
 </body>
 
 </html>
