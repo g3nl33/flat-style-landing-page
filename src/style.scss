@@ -1,0 +1,258 @@
+$header-color: #4c97a2;
+$main-theme-color: #00d089;
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto';
+}
+
+.page-header {
+  background-color: $header-color;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1% 10%;
+
+  .page-header__logo {
+    color: #ffffff;
+    font-family: 'Cherry Swash';
+    font-weight: 100;
+    font-size: 3vw;
+    padding: 0 0 0 5%;
+  }
+
+  .page-header__nav {
+    width: 45%;
+    font-weight: 300;
+    font-size: 1.2vw;
+
+    .page-header__nav-content {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      list-style: none;
+      color: #e4e4e4;
+      height: 100%;
+
+      a {
+        text-decoration: none;
+        color: #e4e4e4;
+
+        &:hover {
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
+
+.recent-topics-slider {
+  position: relative;
+  margin: auto;
+  max-height: 70vh;
+  overflow: hidden;
+
+  .showSlide {
+    display: none;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .left, .right {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+
+    &:hover {
+      background-color: $header-color;
+    }
+  }
+
+  .right {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+}
+
+.site-description {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 5% 15%;
+  color: #4c505d;
+
+  .site-description__header {
+    font-weight: 300;
+    font-size: 2.5vw;
+    width: 75%;
+    line-height: 4vw;
+    margin-bottom: 2.5%;
+
+    span {
+      font-weight: 500;
+    }
+  }
+
+  .site-description__text {
+    font-size: 1.1vw;
+    font-weight: 400;
+    line-height: 1.8vw;
+    margin-bottom: 8%;
+  }
+
+  .site-description__icons-container {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    i {
+      font-size: 6vw;
+      color: $header-color;
+    }
+  }
+}
+
+.cite-of-the-day {
+  background: $main-theme-color;
+  padding: 7% 14%;
+
+  .cite-of-the-day__header {
+    padding-left: 42.5%;
+    margin-bottom: 8%;
+
+    .cite-of-the-day__author-photo {
+      border-radius: 50%;
+      filter: grayscale(100%);
+      width: 27%;
+    }
+
+    .cite-of-the-day__author-info {
+      display: inline-block;
+      vertical-align: top;
+      padding-left: 4%;
+
+      .cite-of-the-day__author-info-content {
+        position: relative;
+        display: block;
+
+        .cite-of-the-day__author-name {
+          color: #e4e4e4;
+          font-size: 2.5vw;
+          font-weight: 700;
+        }
+
+        .cite-of-the-day__quote-icon {
+          position: absolute;
+          top: -53%;
+          left: -37%;
+          display: block;
+
+          i {
+            color: #33d9a1;
+            font-size: 18vw;
+          }
+        }
+      }
+    }
+  }
+
+  .cite-of-the-day__text {
+    color: #e4e4e4;
+    font-size: 1.4vw;
+    font-weight: 300;
+    line-height: 3vw;
+  }
+}
+
+.contact-us {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  #contact-us__map-bg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
+
+  .contact-us__form-wrapper {
+    height: 30vw;
+    width: 30vw;
+    background-color: rgba(206, 206, 206, 0.6);
+    border: 2px solid #dce3e4;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 3% 0;
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      width: 60%;
+      margin: 10% 0 0;
+
+      .form__input-field {
+        padding: 5px 20px;
+        margin-bottom: 3%;
+        border: 1px solid #dce3e4;
+        height: 2vw;
+      }
+
+      .form__message-field {
+        border: 1px solid #dce3e4;
+        resize: none;
+        padding: 5px 20px;
+        height: 5vw;
+      }
+
+      .form__message-field::placeholder, .form__input-field::placeholder {
+        color: #dce3e4;
+      }
+
+      .form__submit-btn-wrapper {
+        text-align: center;
+
+        .form__submit-btn {
+          background: transparent;
+          border: none;
+          border-radius: 50%;
+          width: 5vw;
+          height: 5vw;
+          color: $main-theme-color;
+          text-align: center;
+          margin: 6% 0 0;
+          cursor: pointer;
+
+          i {
+            font-size: 5vw;
+          }
+        }
+      }
+    }
+  }
+}
+
+.page-footer {
+  text-align: center;
+  background: $main-theme-color;
+  color: #e4e4e4;
+  padding: 1% 0;
+  font-size: 1.2vw;
+}
