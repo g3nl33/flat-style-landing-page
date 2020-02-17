@@ -5,6 +5,10 @@
   <meta charset="utf-8">
   <title>Flat Style Design</title>
   <link rel="stylesheet" href="./src/style.css">
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAauxXF6x5dBCRvtlckiVs357kpSBEXM_4&callback=initMap"></script>
+  <script src="./js/map.js"></script>
+  <script async src="./js/slider.js"></script>
+
   <link href="https://fonts.googleapis.com/css?family=Cherry+Swash|Roboto:100,300,400&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -80,37 +84,6 @@
   <footer class="page-footer">
     <span class="page-footer__cr">COPYRIGHT &copy; 2012 CSS AUTHOR.COM</span>
   </footer>
-
-  <script type="text/javascript">
-    var slide_index = 1;
-    displaySlides(slide_index);
-    function nextSlide(n) {
-        displaySlides(slide_index += n);
-    }
-    function currentSlide(n) {
-        displaySlides(slide_index = n);
-    }
-    function displaySlides(n) {
-        var i;
-        var slides = document.getElementsByClassName("showSlide");
-        if (n > slides.length) { slide_index = 1 }
-        if (n < 1) { slide_index = slides.length }
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        slides[slide_index - 1].style.display = "block";
-    }
-  </script>
-
-  <script>
-    function initMap() {
-      var lviv = {lat: 49.840, lng: 24.029};
-      var map = new google.maps.Map(
-        document.getElementById('contact-us__map-bg'), {zoom: 14, center: lviv});
-    }
-  </script>
-
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAauxXF6x5dBCRvtlckiVs357kpSBEXM_4&callback=initMap"></script>
 </body>
 
 </html>
