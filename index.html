@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Flat Style Design</title>
+  <link rel="stylesheet" href="./src/style.css">
+  <script async src="./js/slider.js"></script>
+  <script src="./js/map.js"></script>
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAauxXF6x5dBCRvtlckiVs357kpSBEXM_4&callback=initMap"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Cherry+Swash|Roboto:100,300,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+  <header class="page-header">
+    <h1 class="page-header__logo">Black Sea</h1>
+    <nav class="page-header__nav">
+      <ul class="page-header__nav-content">
+        <li><a href="#">HOME</a></li>
+        <li><span>/</span></li>
+        <li><a href="#">ABOUT ME</a></li>
+        <li><span>/</span></li>
+        <li><a href="#">PORTFOLIO</a></li>
+        <li><span>/</span></li>
+        <li><a href="#">CONTACT ME</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="recent-topics-slider">
+    <div class="showSlide fade">
+        <img src="./images/image1.jpg" />
+    </div>
+    <div class="showSlide fade">
+        <img src="./images/image2.jpg" />
+    </div>
+    <div class="showSlide fade">
+        <img src="./images/image3.jpg" />
+    </div>
+    <!-- Navigation arrows -->
+    <a class="left" onclick="nextSlide(-1)">❮</a>
+    <a class="right" onclick="nextSlide(1)">❯</a>
+  </section>
+
+  <section class="site-description">
+    <h2 class="site-description__header">At the same time that we are earnest to explore <span>&</span> learn all things</h2>
+    <p class="site-description__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    <div class="site-description__icons-container">
+      <i class="material-icons">shopping_basket</i>
+      <i class="material-icons">public</i>
+      <i class="material-icons">business_center</i>
+    </div>
+  </section>
+
+  <article class="cite-of-the-day">
+    <div class="cite-of-the-day__header">
+      <img class="cite-of-the-day__author-photo" src="./images/dhavan-photo.png" alt="Author photo">
+      <div class="cite-of-the-day__author-info">
+        <div class="cite-of-the-day__author-info-content">
+          <span class="cite-of-the-day__author-name">DHAVAN</span>
+          <span class="cite-of-the-day__quote-icon"><i class="material-icons">format_quote</i></span>
+        </div>
+      </div>
+    </div>
+    <p class="cite-of-the-day__text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting</p>
+  </article>
+
+  <section class="contact-us">
+    <div id="contact-us__map-bg"></div>
+    <div class="contact-us__form-wrapper">
+      <form class="form">
+        <input class="form__input-field" type="text" placeholder="Name">
+        <input class="form__input-field" type="email" placeholder="email address">
+        <textarea class="form__message-field" name="message" placeholder="Message"></textarea>
+        <div class="form__submit-btn-wrapper">
+          <button class="form__submit-btn" type="submit"><i class="material-icons">check_circle</i></button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <footer class="page-footer">
+    <span class="page-footer__cr">COPYRIGHT &copy; 2012 CSS AUTHOR.COM</span>
+  </footer>
+</body>
+
+</html>
